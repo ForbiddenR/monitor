@@ -38,11 +38,11 @@ async fn main() {
         println!("success to report")
     }
 
-    let mem_swap = info::get_total_mem_swap();
+    let (mem, swap) = info::get_total_mem_swap();
     let host = model::Host {
         name: c.name,
-        mem_total: mem_swap.0,
-        swap_total: mem_swap.1,
+        mem_total: mem,
+        swap_total: swap,
         arch: "amd64".to_string(),
     };
 
